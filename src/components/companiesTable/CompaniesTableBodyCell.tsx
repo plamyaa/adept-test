@@ -42,9 +42,9 @@ const CompaniesTableBodyCell: React.FC<ITableCell> = ({
             type="checkbox"
             checked={checked}
             onChange={handleInputChange}
-            id="input"
+            id={value}
           />
-          <label htmlFor="input" className="input-lable"></label>
+          <label htmlFor={value} className="input-lable"></label>
         </>
       ) : null}
     </td>

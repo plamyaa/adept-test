@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useAppSelector } from '../../lib/hooks';
+import React, { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import EmployeesTableBody from './EmployeesTableBody';
 import EmployeesTableHeader from './EmployeesTableHeader';
 import EmployeesTableButtons from './EmpoloyeesTableButtons';
-
+import { increaseLength } from '../../store/employeesSlice';
 const Table = () => {
   const state = useAppSelector((state) => state.employees);
-  const [dataSlice, setDataSclice] = useState(state.data.slice(0, 30))
-  let listLength = 30
+  const dispatch = useAppDispatch();
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler)
     return function () {
@@ -17,8 +16,7 @@ const Table = () => {
   
   const scrollHandler = (event: any) => {
     if (event.target.documentElement.scrollHeight - (event.target.documentElement.scrollTop + window.innerHeight) < 5) {
-      listLength += 20;
-      setDataSclice(state.data.slice(0, listLength))
+      dispatch(increaseLength());
     }
   }
   
@@ -27,7 +25,7 @@ const Table = () => {
       <table className="employees-table__table table" border={1}>
         <EmployeesTableHeader />
         <EmployeesTableBody
-          data={dataSlice}
+          data={state.data.slice(0, state.dataLength)}
           constituents={state.constituents}
         />
       </table>

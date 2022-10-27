@@ -11,13 +11,12 @@ const EmployeesTableButtons = () => {
 
   const handleDeleteButton = () => {
     state.pickedEmployees.map((employeeId) => {
-      dispatch(deleteEmployee(Number(employeeId)));
+      dispatch(deleteEmployee(employeeId));
       const fullData = state.data.filter((employee) => {
         if (employee.id === employeeId) return employee;
         return null;
       });
       dispatch(decrementHeadcount(fullData[0].companyId));
-      return null;
     });
   };
   return (

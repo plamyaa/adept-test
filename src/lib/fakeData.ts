@@ -6,7 +6,7 @@ export interface IemployeesData {
   position: string;
 }
 
-export const fakeData = [
+export const fakeData: IemployeesData[] = [
   {
     id: 1,
     surname: 'Степанов',

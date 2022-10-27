@@ -16,8 +16,12 @@ const employees = createSlice({
     data: fakeData,
     constituents: employeesConstituents,
     pickedEmployees: pickedEmployees,
+    dataLength: 30,
   },
   reducers: {
+    increaseLength: (state) => {
+      state.dataLength += 30;
+    },
     selectAllEmployees: (state, action) => {
       if (action.payload === true)
         state.pickedEmployees = state.data.map((employee) => employee.id);
@@ -56,6 +60,7 @@ const employees = createSlice({
 });
 
 export const {
+  increaseLength,
   editCell,
   selectAllEmployees,
   selectEmployee,
