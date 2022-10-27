@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/adept-test/static/css/main.5f2ff963.css",
-    "main.js": "/adept-test/static/js/main.f46753df.js",
+    "main.js": "/adept-test/static/js/main.16c9dd6b.js",
     "static/media/1159633.png": "/adept-test/static/media/1159633.0f46e2728eb984e21ce8.png",
     "index.html": "/adept-test/index.html",
     "main.5f2ff963.css.map": "/adept-test/static/css/main.5f2ff963.css.map",
-    "main.f46753df.js.map": "/adept-test/static/js/main.f46753df.js.map"
+    "main.16c9dd6b.js.map": "/adept-test/static/js/main.16c9dd6b.js.map"
   },
   "entrypoints": [
     "static/css/main.5f2ff963.css",
-    "static/js/main.f46753df.js"
+    "static/js/main.16c9dd6b.js"
   ]
 }
