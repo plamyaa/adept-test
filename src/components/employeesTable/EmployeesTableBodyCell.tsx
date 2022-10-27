@@ -40,9 +40,9 @@ const EmployeesTableBodyCell: React.FC<ITableCell> = ({
         type="checkbox"
         checked={checked}
         onChange={handleInputChange}
-        id={value}
+        id={`${value}${rowId}`}
       />
-      <label htmlFor={value} className="input-lable"></label>
+      <label htmlFor={`${value}${rowId}`} className="input-lable"></label>
     </td>
   );
 };
