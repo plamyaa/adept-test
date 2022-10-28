@@ -102,6 +102,7 @@
 
 .header__cell {
   margin: auto;
+  line-height: 30px;
 }
 table {
   border-radius: 10px;
@@ -119,7 +120,7 @@ th {
   position: relative;
   padding: 5px;
   &__value {
-    max-width: 86px;
+    width: 100%;
     overflow-wrap: break-word;
   }
   .cell__button {
@@ -142,6 +143,8 @@ th {
 .cell__button:checked {
   display: inline-block;
   position: absolute;
+  width: 10px;
+  height: 10px;
   top: 0;
   right: 0;
   margin: auto;
