@@ -33,9 +33,9 @@ const EmployeesModalWindow: React.FC<IEmployeesModalWindow> = ({
 
   return (
     <div>
-      <div className="modal-mask">
+      <div className="modal-mask" onClick={() => closeModal()}>
         <div className="modal-wrapper">
-          <div className="modal-container">
+          <div className="modal-container" onClick={(e) => e.stopPropagation()}>
             <button className="modal-exit" onClick={() => closeModal()}>
               X
             </button>
