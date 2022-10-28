@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../lib/hooks';
-import EmployeesTableBody from './EmployeesTableBody';
-import EmployeesTableHeader from './EmployeesTableHeader';
-import EmployeesTableButtons from './EmpoloyeesTableButtons';
+import EmployeesTableBody from './TableBody';
+import EmployeesTableHeader from './TableHeader';
+import EmployeesTableButtons from './TableButtons';
 import { increaseLength } from '../../store/employeesSlice';
 const Table = () => {
   const state = useAppSelector((state) => state.employees);

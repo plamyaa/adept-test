@@ -1,7 +1,7 @@
 import React from 'react';
 import { IContituents, IcompanyData } from '../../store/companiesSlice';
 import TableBodyHeader from '../tableComponents/TableBodyHeader';
-import CompaniesTableBodyRow from './CompaniesTableBodyRow';
+import CompaniesTableBodyRow from './TableBodyRow';
 
 interface ICompaniesTableBody {
   data: IcompanyData[];

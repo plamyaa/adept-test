@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { deleteCompany } from '../../store/companiesSlice';
-import CompaniesModalWindow from './CompaniesModalWindow';
+import CompaniesModalWindow from './ModalWindow';
 
 const CompaniesTableButtons = () => {
   const [showModal, setShowModal] = useState(false);

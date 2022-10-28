@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { decrementHeadcount } from '../../store/companiesSlice';
 import { deleteEmployee } from '../../store/employeesSlice';
-import EmployeesModalWindow from './EmployeesModalWindow';
+import EmployeesModalWindow from './ModalWindow';
 
 const EmployeesTableButtons = () => {
   const [showModal, setShowModal] = useState(false);

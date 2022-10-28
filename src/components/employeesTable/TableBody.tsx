@@ -3,7 +3,7 @@ import { IemployeesData } from '../../lib/fakeData';
 import { useAppSelector } from '../../lib/hooks';
 import { IContituents } from '../../store/companiesSlice';
 import TableBodyHeader from '../tableComponents/TableBodyHeader';
-import EmployeesTableBodyRow from './EmployeesTableBodyRow';
+import EmployeesTableBodyRow from './TableBodyRow';
 
 interface IEmployeesTableBody {
   data: IemployeesData[];

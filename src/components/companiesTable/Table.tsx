@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAppSelector } from '../../lib/hooks';
-import CompaniesTableBody from './CompaniesTableBody';
-import CompaniesTableHeader from './CompaniesTableHeader';
-import CompaniesTableButtons from './CompaniesTableButtons';
+import CompaniesTableBody from './TableBody';
+import CompaniesTableHeader from './TableHeader';
+import CompaniesTableButtons from './TableButtons';
 
 const CompaniesTable = () => {
   const state = useAppSelector((state) => state.companies);

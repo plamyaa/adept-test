@@ -2,7 +2,7 @@ import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { selectCompany, unSelectCompany } from '../../store/companiesSlice';
 import { unSelectEmployee } from '../../store/employeesSlice';
-import CompaniesTableBodyCell from './CompaniesTableBodyCell';
+import CompaniesTableBodyCell from './TableBodyCell';
 
 interface ITableRow {
   rowId: number

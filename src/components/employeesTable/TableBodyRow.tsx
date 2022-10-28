@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../lib/hooks';
 import { selectEmployee, unSelectEmployee } from '../../store/employeesSlice';
-import EmployeesTableBodyCell from './EmployeesTableBodyCell';
+import EmployeesTableBodyCell from './TableBodyCell';
 
 interface ITableRow {
   values: string[];
@@ -34,7 +34,7 @@ const EmployeesTableBodyRow: React.FC<ITableRow> = ({
             return null;
           case 'id':
             return (
-              <td className="body__cell" key={index} id={value}>
+              <td className="body__cell cell" key={index} id={value}>
                 <input
                   className="body__checkbox"
                   type="checkbox"
