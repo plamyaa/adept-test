@@ -15,13 +15,12 @@ const CompaniesTableBodyCell: React.FC<ITableCell> = ({
 }) => {
   const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);
-  const [cellValue, setCellValue] = useState(value);
 
-  const handleInputChange = () => {
+  const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
     if (checked) {
-      dispatch(editCell({ newValue: cellValue, id: rowId }));
+      dispatch(editCell({ newValue: target.value, id: rowId }));
     }
-    setChecked(!checked);
   };
   return (
     <td className="body__cell cell">
@@ -29,8 +28,8 @@ const CompaniesTableBodyCell: React.FC<ITableCell> = ({
         <input
           type="text"
           className="cell__value"
-          value={cellValue}
-          onChange={(e) => setCellValue(e.target.value)}
+          value={value}
+          onChange={handleInputChange}
         />
       ) : (
         <span className="cell__value">{value}</span>
@@ -41,7 +40,7 @@ const CompaniesTableBodyCell: React.FC<ITableCell> = ({
             className="cell__button"
             type="checkbox"
             checked={checked}
-            onChange={handleInputChange}
+            onClick={() => setChecked(!checked)}
             id={`${value}${rowId}`}
           />
           <label htmlFor={`${value}${rowId}`} className="input-lable"></label>

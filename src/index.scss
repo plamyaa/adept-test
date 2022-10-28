@@ -48,11 +48,6 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-.modal-header h3 {
-  margin-top: 0;
-  color: #42b983;
-}
-
 .modal-exit {
   cursor: pointer;
   float: right;
@@ -108,8 +103,16 @@
 .header__cell {
   margin: auto;
 }
+table {
+  border-radius: 10px;
+}
+
+th {
+  border-radius: 5px;
+}
 
 .cell {
+  border-radius: 5px;
   text-align: center;
   max-width: 90px;
   width: auto;
