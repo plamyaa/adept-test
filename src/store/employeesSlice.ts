@@ -34,12 +34,9 @@ const employees = createSlice({
       const { rowId, newValue, cellName } = payload;
       state.data = state.data.map((employee: IemployeesData) => {
         if (employee.id === rowId) {
-          const name: keyof IemployeesData = 'name';
-          if (name === cellName) employee[name] = newValue;
-          const surname: keyof IemployeesData = 'surname';
-          if (surname === cellName) employee[surname] = newValue;
-          const position: keyof IemployeesData = 'position';
-          if (position === cellName) employee[position] = newValue;
+          if ('name' === cellName) employee['name'] = newValue;
+          if ('surname' === cellName) employee['surname'] = newValue;
+          if ('position' === cellName) employee['position'] = newValue;
         }
         return employee;
       });
