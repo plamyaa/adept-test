@@ -53,6 +53,7 @@ const CompaniesTableBodyRow: React.FC<ITableRow> = ({ values, keys, rowId }) => 
             return (
               <CompaniesTableBodyCell
                 key={index}
+                cellName={keys[index]}
                 value={value}
                 rowId={rowId}
                 isEditable={false}
@@ -62,6 +63,7 @@ const CompaniesTableBodyRow: React.FC<ITableRow> = ({ values, keys, rowId }) => 
             return (
               <CompaniesTableBodyCell
                 key={index}
+                cellName={keys[index]}
                 value={value}
                 rowId={rowId}
                 isEditable={true}

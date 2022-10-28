@@ -5,42 +5,41 @@ import { editCell } from '../../store/employeesSlice';
 interface ITableCell {
   rowId: number;
   value: string;
+  cellName: string;
 }
 
 const EmployeesTableBodyCell: React.FC<ITableCell> = ({
   rowId,
   value,
+  cellName,
 }) => {
   const dispatch = useAppDispatch();
   const [checked, setChecked] = useState(false);
-  const [cellValue, setCellValue] = useState(value);
 
-  const handleInputChange = () => {
+  const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
     if (checked) {
-      dispatch(editCell({ newValue: cellValue, id: rowId }));
+      dispatch(editCell({ newValue: target.value, rowId: rowId, cellName: cellName }));
     }
-    setChecked(!checked);
   };
-
   return (
     <td className="body__cell cell">
       {checked ? (
         <input
           type="text"
           className="cell__value"
-          value={cellValue}
-          onChange={(e) => setCellValue(e.target.value)}
+          value={value}
+          onChange={handleInputChange}
         />
       ) : (
-        <span className="cell__value">{cellValue}</span>
+        <span className="cell__value">{value}</span>
       )}
 
       <input
         className="cell__button"
         type="checkbox"
         checked={checked}
-        onChange={handleInputChange}
-        value={value}
+        onChange={() => setChecked(!checked)}
         id={`${value}${rowId}`}
       />
       <label htmlFor={`${value}${rowId}`} className="input-lable"></label>

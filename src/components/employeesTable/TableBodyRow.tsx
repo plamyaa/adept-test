@@ -45,7 +45,7 @@ const EmployeesTableBodyRow: React.FC<ITableRow> = ({
             );
           default:
             return (
-              <EmployeesTableBodyCell key={index} value={value} rowId={rowId} />
+              <EmployeesTableBodyCell key={index} value={value} rowId={rowId} cellName={keys[index]} />
             );
         }
       })}

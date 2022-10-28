@@ -1,12 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fakeData } from '../lib/fakeData';
+import { fakeData, IemployeesData } from '../lib/fakeData';
 
-const employeesConstituents = [
-  'Чекбокс',
-  'Фамилия',
-  'Имя',
-  'Должность',
-]
+const employeesConstituents = ['Чекбокс', 'Фамилия', 'Имя', 'Должность'];
 
 const pickedEmployees: number[] = [];
 
@@ -35,11 +30,17 @@ const employees = createSlice({
         (employeeId) => employeeId !== action.payload
       );
     },
-    editCell: (state, action) => {
-      const employeeId = action.payload.id;
-      const newValue = action.payload.newValue;
-      state.data = state.data.map((employee) => {
-        if (employee.id === employeeId) employee.name = newValue;
+    editCell: (state, { payload }) => {
+      const { rowId, newValue, cellName } = payload;
+      state.data = state.data.map((employee: IemployeesData) => {
+        if (employee.id === rowId) {
+          const name: keyof IemployeesData = 'name';
+          if (name === cellName) employee[name] = newValue;
+          const surname: keyof IemployeesData = 'surname';
+          if (surname === cellName) employee[surname] = newValue;
+          const position: keyof IemployeesData = 'position';
+          if (position === cellName) employee[position] = newValue;
+        }
         return employee;
       });
     },

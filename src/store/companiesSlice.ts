@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fakeData } from '../lib/fakeData';
 
-
 export type IContituents = string[];
 
 const companieConstituents: IContituents = [
@@ -58,6 +57,11 @@ const companiesData: IcompanyData[] = [
   },
 ];
 
+type TeditCell = {
+  type: string;
+  payload: { rowId: number; newValue: string; cellId: number };
+};
+
 const pickedCompanies: number[] = [];
 
 const companies = createSlice({
@@ -81,11 +85,17 @@ const companies = createSlice({
         (companyId) => companyId !== action.payload
       );
     },
-    editCell: (state, action) => {
-      const companyId = action.payload.id;
-      const newValue = action.payload.newValue;
-      state.data = state.data.map((company) => {
-        if (company.id === companyId) company.name = newValue;
+    editCell: (state, { payload }) => {
+      const { rowId, newValue, cellName } = payload;
+      state.data = state.data.map((company: IcompanyData) => {
+        if (company.id === rowId) {
+          const name: keyof IcompanyData = 'name';
+          if (name === cellName)
+            company[name] = newValue;
+          const adress: keyof IcompanyData = 'adress';
+          if (adress === cellName)
+            company[adress] = newValue;
+        }
         return company;
       });
     },
@@ -111,7 +121,7 @@ const companies = createSlice({
     decrementHeadcount: (state, action) => {
       state.data = state.data.map((company) => {
         if (company.id === action.payload) company.headcount--;
-        return company
+        return company;
       });
     },
   },
@@ -125,7 +135,7 @@ export const {
   addCompany,
   deleteCompany,
   incrementHeadcount,
-  decrementHeadcount
+  decrementHeadcount,
 } = companies.actions;
 
 export default companies.reducer;
