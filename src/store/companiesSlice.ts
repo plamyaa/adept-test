@@ -90,11 +90,9 @@ const companies = createSlice({
       state.data = state.data.map((company: IcompanyData) => {
         if (company.id === rowId) {
           const name: keyof IcompanyData = 'name';
-          if (name === cellName)
-            company[name] = newValue;
+          if (name === cellName) company[name] = newValue;
           const adress: keyof IcompanyData = 'adress';
-          if (adress === cellName)
-            company[adress] = newValue;
+          if (adress === cellName) company[adress] = newValue;
         }
         return company;
       });

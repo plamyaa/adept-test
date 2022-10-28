@@ -4,7 +4,7 @@ interface ITableBodyHeader {
   data: string[];
 }
 
-const TableBodyHeader: React.FC<ITableBodyHeader> = ({data}) => {
+const TableBodyHeader: React.FC<ITableBodyHeader> = ({ data }) => {
   return (
     <tr className="body__header header">
       {data.map((value, index) => {

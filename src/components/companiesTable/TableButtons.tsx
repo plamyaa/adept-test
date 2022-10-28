@@ -8,8 +8,10 @@ const CompaniesTableButtons = () => {
   const state = useAppSelector((state) => state.companies);
   const dispatch = useAppDispatch();
   const handleDeleteButton = () => {
-    state.pickedCompanies.map(companyId => dispatch(deleteCompany(Number(companyId))))
-  }
+    state.pickedCompanies.map((companyId) =>
+      dispatch(deleteCompany(Number(companyId)))
+    );
+  };
   return (
     <>
       <button
@@ -18,10 +20,15 @@ const CompaniesTableButtons = () => {
       >
         Добавить копанию
       </button>
-      <button className="button company-table__delete-button" onClick={handleDeleteButton}>
+      <button
+        className="button company-table__delete-button"
+        onClick={handleDeleteButton}
+      >
         Удалить выделенные компании
       </button>
-      {showModal ? <CompaniesModalWindow closeModal={() => setShowModal(false)} /> : null}
+      {showModal ? (
+        <CompaniesModalWindow closeModal={() => setShowModal(false)} />
+      ) : null}
     </>
   );
 };

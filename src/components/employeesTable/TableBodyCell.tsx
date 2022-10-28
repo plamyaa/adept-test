@@ -19,7 +19,9 @@ const EmployeesTableBodyCell: React.FC<ITableCell> = ({
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     if (checked) {
-      dispatch(editCell({ newValue: target.value, rowId: rowId, cellName: cellName }));
+      dispatch(
+        editCell({ newValue: target.value, rowId: rowId, cellName: cellName })
+      );
     }
   };
   return (

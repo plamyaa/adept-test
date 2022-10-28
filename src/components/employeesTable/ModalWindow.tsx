@@ -27,7 +27,7 @@ const EmployeesModalWindow: React.FC<IEmployeesModalWindow> = ({
         position: position,
       })
     );
-    dispatch(incrementHeadcount(companyId))
+    dispatch(incrementHeadcount(companyId));
     closeModal();
   };
 

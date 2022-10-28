@@ -9,13 +9,15 @@ const CompaniesTableHeader = () => {
   const stateCompanies = useAppSelector((state) => state.companies);
   const pickedLength = stateCompanies.pickedCompanies.length;
   const dataLength = stateCompanies.data.length;
-  const pickedEmployees = useAppSelector(state =>state.employees.pickedEmployees)
+  const pickedEmployees = useAppSelector(
+    (state) => state.employees.pickedEmployees
+  );
 
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     dispatch(selectAllCompanies(target.checked));
     if (target.checked === false)
-      pickedEmployees.map(employee => dispatch(unSelectEmployee(employee)))
+      pickedEmployees.map((employee) => dispatch(unSelectEmployee(employee)));
   };
 
   return (

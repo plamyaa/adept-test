@@ -5,37 +5,45 @@ import { unSelectEmployee } from '../../store/employeesSlice';
 import CompaniesTableBodyCell from './TableBodyCell';
 
 interface ITableRow {
-  rowId: number
+  rowId: number;
   values: string[];
   keys: string[];
 }
 
-const CompaniesTableBodyRow: React.FC<ITableRow> = ({ values, keys, rowId }) => {
+const CompaniesTableBodyRow: React.FC<ITableRow> = ({
+  values,
+  keys,
+  rowId,
+}) => {
   const pickedCompanies = useAppSelector(
     (state) => state.companies.pickedCompanies
   );
-  const stateEmployees = useAppSelector(state => state.employees)
+  const stateEmployees = useAppSelector((state) => state.employees);
   const dispatch = useAppDispatch();
   const checked = pickedCompanies.includes(Number(values[0]));
 
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement;
     const id = Number(target.parentElement?.id);
-    if (checked === false)
-      dispatch(selectCompany(id));
+    if (checked === false) dispatch(selectCompany(id));
     else {
-      dispatch(unSelectCompany(id))
+      dispatch(unSelectCompany(id));
       const showedEmployees = stateEmployees.data.filter((employee) => {
-        if (stateEmployees.pickedEmployees.includes(employee.id) && employee.companyId === id)
+        if (
+          stateEmployees.pickedEmployees.includes(employee.id) &&
+          employee.companyId === id
+        )
           return employee;
-        return null
-      })
-      showedEmployees.map(employee => dispatch(unSelectEmployee(employee.id)))
-    };
+        return null;
+      });
+      showedEmployees.map((employee) =>
+        dispatch(unSelectEmployee(employee.id))
+      );
+    }
   };
-  
+
   return (
-    <tr className={checked ? "body__row body__row-selected" :"body__row"} >
+    <tr className={checked ? 'body__row body__row-selected' : 'body__row'}>
       {values.map((value: string, index: number) => {
         switch (keys[index]) {
           case 'id':

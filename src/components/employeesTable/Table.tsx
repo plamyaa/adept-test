@@ -8,20 +8,24 @@ const Table = () => {
   const state = useAppSelector((state) => state.employees);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    document.addEventListener('scroll', scrollHandler)
+    document.addEventListener('scroll', scrollHandler);
     return function () {
-      document.removeEventListener('scroll', scrollHandler)
+      document.removeEventListener('scroll', scrollHandler);
     };
-  }, [])
-  
+  }, []);
+
   const scrollHandler = (event: any) => {
-    if (event.target.documentElement.scrollHeight - (event.target.documentElement.scrollTop + window.innerHeight) < 5) {
+    if (
+      event.target.documentElement.scrollHeight -
+        (event.target.documentElement.scrollTop + window.innerHeight) <
+      5
+    ) {
       dispatch(increaseLength());
     }
-  }
-  
+  };
+
   return (
-    <div className="employees-table" >
+    <div className="employees-table">
       <table className="employees-table__table table" border={1}>
         <EmployeesTableHeader />
         <EmployeesTableBody
@@ -33,7 +37,5 @@ const Table = () => {
     </div>
   );
 };
-
-
 
 export default Table;
