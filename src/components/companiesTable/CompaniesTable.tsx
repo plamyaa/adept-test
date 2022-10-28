@@ -7,8 +7,8 @@ import CompaniesTableButtons from './CompaniesTableButtons';
 const CompaniesTable = () => {
   const state = useAppSelector((state) => state.companies);
   return (
-    <div className="companie-table">
-      <table className="companie-table__table table" border={1}>
+    <div className="company-table">
+      <table className="company-table__table table" border={1}>
         <CompaniesTableHeader />
         <CompaniesTableBody
           data={state.data}

@@ -13,7 +13,7 @@ const TableBodyCompanies: React.FC<ICompaniesTableBody> = ({
   constituents,
 }) => {
   return (
-    <tbody className="companie-table__body body">
+    <tbody className="company-table__body body">
       <TableBodyHeader data={constituents} />
       {data.map((item) => {
         const values = Object.values(item);

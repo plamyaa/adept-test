@@ -32,7 +32,7 @@ const EmployeesTableBodyCell: React.FC<ITableCell> = ({
           onChange={(e) => setCellValue(e.target.value)}
         />
       ) : (
-        <span className="cell__value">{value}</span>
+        <span className="cell__value">{cellValue}</span>
       )}
 
       <input
@@ -40,6 +40,7 @@ const EmployeesTableBodyCell: React.FC<ITableCell> = ({
         type="checkbox"
         checked={checked}
         onChange={handleInputChange}
+        value={value}
         id={`${value}${rowId}`}
       />
       <label htmlFor={`${value}${rowId}`} className="input-lable"></label>

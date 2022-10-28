@@ -22,13 +22,13 @@ const EmployeesTableButtons = () => {
   return (
     <>
       <button
-        className="button companie-table__add-button"
+        className="button employee-table__add-button"
         onClick={() => setShowModal(true)}
       >
         Добавить сотрудника
       </button>
       <button
-        className="button companie-table__delete-button"
+        className="button employee-table__delete-button"
         onClick={handleDeleteButton}
       >
         Удалить выделенных сотрудников

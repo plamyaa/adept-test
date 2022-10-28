@@ -113,28 +113,51 @@
   text-align: center;
   max-width: 90px;
   width: auto;
+  position: relative;
+  padding: 5px;
   &__value {
     max-width: 86px;
+    overflow-wrap: break-word;
   }
-}
-
-.cell__button {
-  display: none;
+  .cell__button {
+    display: none;
+  }
 }
 
 .input-lable {
   display:inline-block;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background-image: url("../public/1159633.png");
   background-repeat: no-repeat;
   background-size: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .cell__button:checked {
-  display:block;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
   margin: auto;
   + .input-lable {
     display: none;
   }
+}
+
+.button {
+  height: 30px;
+}
+
+.company-table__add-button {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+.company-table__delete-button {
+  margin-top: 10px;
+  float: right;
+  margin-right: 30px;
 }

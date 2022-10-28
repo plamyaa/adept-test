@@ -13,12 +13,12 @@ const CompaniesTableButtons = () => {
   return (
     <>
       <button
-        className="button companie-table__add-button"
+        className="button company-table__add-button"
         onClick={() => setShowModal(true)}
       >
         Добавить копанию
       </button>
-      <button className="button companie-table__delete-button" onClick={handleDeleteButton}>
+      <button className="button company-table__delete-button" onClick={handleDeleteButton}>
         Удалить выделенные компании
       </button>
       {showModal ? <CompaniesModalWindow closeModal={() => setShowModal(false)} /> : null}
